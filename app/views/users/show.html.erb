@@ -8,6 +8,19 @@
   <%= user.email %>
 </div>
 <div>
+  <h2>Tickets</h2>
+  <% if user.tickets.count == 0 %>
+  No tickets assigned.
+  <% end %>
+
+  <% user.tickets.each do |ticket| %>
+    <span>
+      <%= link_to(ticket.id, ticket_path(ticket)) %>
+      -
+      <%= ticket.title %>
+    </span>
+  <% end %>
+<div>
   <br/>
   <%= link_to('Edit', edit_user_path(user)) %>
 </div>

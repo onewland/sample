@@ -1,0 +1,15 @@
+<h1> Ticket <%= ticket.id %> </h1>
+<div>
+  <h2><%= ticket.title %></h2>
+</div>
+<div>
+  <h2>Description</h2>
+  <%= ticket.description %>
+</div>
+<div>
+  <h3>Assigned to <%= ticket.user ? link_to(ticket.user.name, ticket.user) : 'Nobody' %></h3>
+</div>
+<div>
+  <br/>
+  <%= link_to('Edit', edit_ticket_path(ticket)) %>
+</div>
