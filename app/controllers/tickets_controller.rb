@@ -25,6 +25,8 @@ class TicketsController < ApplicationController
     redirect_to(ticket)
   end
 
+  def index; end
+
 private
   def ticket_params
     params.require(:ticket).permit(:title, :description, :assignee_id)
