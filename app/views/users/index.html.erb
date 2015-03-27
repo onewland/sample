@@ -1,0 +1,23 @@
+<h1> Users </h1>
+<table class="table">
+  <thead>
+    <tr>
+      <td></td>
+      <td>Name</td>
+      <td>E-mail</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.each do |user| %>
+      <tr>
+	<td> <%= user.id %> </td>
+	<td> <%= link_to(user.name, user_path(user)) %> </td>
+	<td> <%= user.email %> <td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div>
+  <%= link_to('New User', new_user_path) %>
+</div>
