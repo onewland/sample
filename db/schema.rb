@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327140759) do
+ActiveRecord::Schema.define(version: 20150327154127) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "tickets", force: :cascade do |t|
     t.text     "title"
@@ -28,4 +31,7 @@ ActiveRecord::Schema.define(version: 20150327140759) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "users", ["email"], name: "users_email_key", unique: true, using: :btree
+
+  add_foreign_key "tickets", "users", column: "assignee_id", name: "assignee_fk"
 end
