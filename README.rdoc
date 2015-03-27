@@ -1,28 +1,18 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
+You should have rbenv installed, and that should take care of everything else.
+This application specifies Ruby 2.1.5.
 
 * System dependencies
+PostgreSQL is necessary for foreign key constraints.
 
 * Configuration
+Make sure to point config/database.yml at a valid PostgreSQL database.
 
 * Database creation
-
-* Database initialization
+Run `bundle exec rake db:create db:migrate db:seed` to create a database
+and seed it with some basic values
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Run `bundle exec rspec`
