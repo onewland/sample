@@ -7,7 +7,7 @@
   <%= ticket.description %>
 </div>
 <div>
-  <h3>Assigned to <%= ticket.user ? link_to(ticket.user.name, ticket.user) : 'Nobody' %></h3>
+  <h3>Assigned to <%= assignee_link(ticket) %></h3>
 </div>
 <div>
   <br/>

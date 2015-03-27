@@ -14,7 +14,7 @@
 	<td> <%= ticket.id %> </td>
 	<td> <%= link_to(ticket.title, ticket_path(ticket)) %> </td>
 	<td> <%= ticket.description %> </td>
-	<td> <%= ticket.user ? link_to(ticket.user.name, ticket.user) : 'Nobody' %> </td>
+	<td> <%= assignee_link(ticket) %> </td>
       </tr>
     <% end %>
   </tbody>
