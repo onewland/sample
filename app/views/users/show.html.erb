@@ -1,26 +1,37 @@
-<h1> User <%= user.id %> </h1>
-<div>
-  <h2>Name</h2>
-  <%= user.name %>
+<div class="row">
+  <h1> User <%= user.id %> - <%= user.name %></h1>
 </div>
-<div>
+<div class="row">
   <h2>E-mail</h2>
   <%= user.email %>
 </div>
-<div>
+<div class="row">
   <h2>Tickets</h2>
   <% if user.tickets.count == 0 %>
   No tickets assigned.
   <% end %>
 
-  <% user.tickets.each do |ticket| %>
-    <span>
-      <%= link_to(ticket.id, ticket_path(ticket)) %>
-      -
-      <%= ticket.title %>
-    </span>
-  <% end %>
-<div>
-  <br/>
+  <table class="table">
+    <thead>
+      <tr>
+	<td></td>
+	<td>Title</td>
+	<td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% user.tickets.each do |ticket| %>
+      <tr>
+	<td> <%= ticket.id %> </td>
+	<td> <%= link_to(ticket.title, ticket_path(ticket)) %> </td>
+	<td> <%= ticket.description %> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="row">
   <%= link_to('Edit', edit_user_path(user)) %>
+  |
+  <%= link_to('All Users', users_path) %>
 </div>

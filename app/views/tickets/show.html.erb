@@ -1,15 +1,16 @@
-<h1> Ticket <%= ticket.id %> </h1>
-<div>
-  <h2><%= ticket.title %></h2>
+<div class="row">
+  <h2> Ticket <%= ticket.id %> - <%= ticket.title %></h2>
 </div>
-<div>
+<div class="row">
   <h2>Description</h2>
   <%= ticket.description %>
 </div>
-<div>
+<div class="row">
   <h3>Assigned to <%= assignee_link(ticket) %></h3>
 </div>
-<div>
+<div class="row">
   <br/>
   <%= link_to('Edit', edit_ticket_path(ticket)) %>
+  |
+  <%= link_to('All Tickets', tickets_path) %>
 </div>

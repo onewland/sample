@@ -2,6 +2,7 @@ class TicketsController < ApplicationController
   expose(:ticket) { Ticket.find(params[:id]) }
   expose(:tickets) { Ticket.all }
   expose(:form_action)
+  expose(:users) { User.all }
 
   def new
     self.ticket = Ticket.new
