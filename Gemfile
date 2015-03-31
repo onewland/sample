@@ -14,6 +14,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'decent_exposure'
 gem 'rspec'
 
+gem 'faker'
+
 gem 'pg'
 # Use Unicorn as the app server
 # gem 'unicorn'
