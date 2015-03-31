@@ -15,6 +15,7 @@ gem 'decent_exposure'
 gem 'rspec'
 
 gem 'faker'
+gem 'kaminari'
 
 gem 'pg'
 # Use Unicorn as the app server

@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   expose(:ticket) { Ticket.find(params[:id]) }
-  expose(:tickets) { Ticket.all }
+  expose(:tickets) { Ticket.page(params[:page]) }
   expose(:form_action)
   expose(:users) { User.all }
 

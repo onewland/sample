@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   expose(:user) { User.find(params[:id]) }
-  expose(:users) { User.all }
+  expose(:users) { User.page(params[:page]) }
   expose(:form_action)
 
   def new
